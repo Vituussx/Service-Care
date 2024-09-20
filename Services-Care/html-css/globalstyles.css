@@ -1,0 +1,293 @@
+/* Estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('img/idosobackground.jpg') no-repeat center center/cover; /* Escurecendo a imagem de fundo */
+}
+
+/* Estilos para o formulário */
+header {
+    margin-bottom: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+    background-color: #003366;
+    color: rgb(255, 255, 255);
+    border-bottom: -10px solid rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    background-size: 5%;
+    background-position: left top;
+}
+
+/* Divisor diagonal no cabeçalho */
+header::after {
+    content: '';
+    position: absolute;
+    bottom: -25px; /* Ajuste fino para a posição */
+    margin-left: 300px; /* Garantir que comece da esquerda */
+    margin-bottom: 24px;
+    width: 100%;
+    height: 2px; /* Ajuste da espessura do divisor */
+    background-color: rgb(255, 255, 255); /* Cor do divisor */
+    transform: skewY(-65deg); /* Ajuste da inclinação para suavizar o ângulo */
+    transform-origin: top left;
+    z-index: 1; /* Para garantir que fique visível */
+}
+
+header .logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+header .logo-container img {
+    height: 80px;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Estilos para a logo e o título */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img {
+    height: 80px; /* Ajuste o tamanho da logo aqui */
+    margin-right: 20px; /* Espaçamento entre a logo e o título */
+}
+
+.logo-container h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Estilos para o menu */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-weight: bold;
+    padding-bottom: 5px; /* Espaçamento entre o texto e a linha */
+    border-bottom: 2px solid transparent; /* Inicialmente a linha é transparente */
+    transition: border-bottom 0.3s ease; /* Suaviza a transição da linha */
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid rgb(0, 0, 0); /* A linha aparece ao passar o mouse */
+    color: black;
+    font-weight: bolder;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    cursor: pointer;
+}
+
+/* Estilos para o ícone de menu em dispositivos móveis */
+.menu-icon {
+    display: none; /* Escondido no desktop */
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Estilos para Dispositivos Móveis */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Ocultar menu no mobile por padrão */
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #003366;
+    }
+
+    .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-icon {
+        display: block; /* Mostrar o ícone no mobile */
+    }
+
+    .menu-active {
+        display: flex;
+    }
+}
+
+/* Aumentar o tamanho da logo em telas maiores */
+@media (min-width: 1024px) {
+    .logo-container img {
+        height: 100px; /* Tamanho maior do logo em desktops */
+    }
+}
+
+/* Estilos para o footer em todas as páginas */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center; /* Centraliza o texto */
+    padding: 10px;
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    left: 0;
+}
+
+/* Estilo para o formulário de cadastro */
+form {
+    background-color: #f0f8ff; /* Azul claro suave para combinar com o restante da página */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+    max-width: 500px;
+    margin: 0px 0px 0px 0px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 1px solid #000000; /* Adicionar uma borda azul escura */
+}
+
+/* Estilo para os campos de input e labels */
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="tel"] {
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Botão de envio */
+form button {
+    padding: 10px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #1E90FF;
+}
+
+/* Centralizar o conteúdo da página */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+/* Estilo para a mensagem de sucesso */
+.mensagem-sucesso {
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Formatação para a box externa com degradê */
+/* Iluminação suave na área do formulário */
+.form-box {
+    background: #003366; /* Fundo levemente translúcido */
+    padding: 68px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3); /* Iluminação suave */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.form-box-inner {
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo mais claro com menos translucidez */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="tel"] {
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    width: 100%;
+}
+
+form button {
+    padding: 10px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #1E90FF;
+}
+
+/* Centralizar o conteúdo da página */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
